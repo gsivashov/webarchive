@@ -26,11 +26,12 @@ def main(file):
             response = get_response(api_url(url.strip()))
             parse = response.json()
             if len(parse['archived_snapshots']) != 0:
+                archive_url = parse['archived_snapshots']['closest']['url']
                 timestamp = parse['archived_snapshots']['closest']['timestamp']
                 formated_date = datetime.strptime(timestamp, "%Y%m%d%H%M%S")
-                print(f'{url.strip()}|{formated_date}')
+                print(f'{url.strip()}|{formated_date}|{archive_url}')
             else:
-                print(f'{url.strip()}|no response')
+                print(f'{url.strip()}|no date|no url')
 
 
 if __name__ == '__main__':

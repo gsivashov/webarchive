@@ -34,4 +34,4 @@ Run script by typing:
 python main.py
 ```
 
-As a response you will get `url`|`closest timestamp` if web.archive contains snapshot for this page OR `url`|`no response` if not
+As a response you will get `url|closest timestamp date|url from archive` if web.archive contains snapshot for this page OR `url|no date|no url` if not
